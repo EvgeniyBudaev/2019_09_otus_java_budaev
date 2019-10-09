@@ -10,7 +10,13 @@ public class ArrayListWork {
     public static void main(String[] args) {
 
         Car[] carArr = new Car[]{new Toyota("Camry"), new Toyota("Land Cruiser"), new Toyota("Avon")};
-        List<Car> carList = new ArrayList<>(Arrays.asList(carArr));
+
+        List<Car> carList = new DIYArrayList<>();
+        Collections.addAll(carList, carArr);
+
+        for(Car c: carList){
+            System.out.println(c);
+        }
 
         //addAll(Collection<? super T> c, T... elements)
         System.out.println("Добавляем новые объекты к текущей коллекции:");
@@ -24,7 +30,7 @@ public class ArrayListWork {
 
         //copy(List<? super T> dest, List<? extends T> src)
         System.out.println("Копируем:");
-        List<? super Car> carListDest = new ArrayList<>(carList);
+        List<? super Car> carListDest = new DIYArrayList<>();
         Collections.copy(carListDest, carList);
         System.out.println("toyotaCars:" + carListDest);
         System.out.println("==============");
@@ -38,11 +44,9 @@ public class ArrayListWork {
             }
         });
 
-        for(Car cars: carList){
-            System.out.println(cars);
-        }
-        System.out.println("==============");
+   }
 
-    }
+
+
 }
 
