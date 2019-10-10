@@ -19,6 +19,7 @@
         <module>hw01-maven</module>
         <module>L03_generics_collections</module>
         <module>L03_generics_collections</module>
+        <module>L04-collections</module>
     </modules>
 
     <properties>
